@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum of Numbers Divisible by 7</title>
+  <script>
+    function sumDivisibleBy(n, divisor) {
+      let sum = 0, count = 0, num = 0;
+      while (count < n) {
+        if (num % divisor === 0) {
+          sum += num;
+          count++;
+        }
+        num++;
+      }
+      return sum;
+    }
+    window.onload = function() {
+      alert("Sum of the first 30 numbers divisible by 7: " + sumDivisibleBy(30, 7));
+    };
+  </script>
+</head>
+<body></body>
+</html>

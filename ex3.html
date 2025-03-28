@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+    <script>
+        function getFibonacci(n) {
+            let fib = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            alert("First 20 Fibonacci numbers:\n" + fib.join(", "));
+        }
+        window.onload = function() {
+            getFibonacci(20);
+        };
+    </script>
+</head>
+<body></body>
+</html>

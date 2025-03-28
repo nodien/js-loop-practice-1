@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #seatContainer {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            width: max-content;
+            margin: auto;
+            padding: 20px;
+        }
+        button {
+            width: 80px;
+            height: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Select Your Seat</h2>
+<div id="seatContainer"></div>
+
+<script>
+    function clickSeat(myButton) {
+        myButton.style.backgroundColor = myButton.style.backgroundColor === "green" ? "lightgray" : "green";
+    }
+
+    let seatHTML = "";
+    for (let i = 1; i <= 30; i++) {
+        seatHTML += `<button onclick="clickSeat(this)">Ghế <br> ${i}</button>`;
+    }
+    document.getElementById("seatContainer").innerHTML = seatHTML;
+</script>
+
+</body>
+</html>

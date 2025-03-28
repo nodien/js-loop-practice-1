@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let remainder = 10000000;
+
+  while (true) {
+    let withdraw = prompt("Enter the withdraw amount: ");
+    // ROB THE BANK OPTION
+    // if (withdraw.toLowerCase() === "rob the bank" || remainder === 0) {
+    //   let action = prompt("💀 You're broke! Type 'rob' to 🏦💰 ROB THE BANK: ");
+    //   if (action.toLowerCase() === "rob") {
+    //     remainder += 10000000;
+    //     alert("🔥💰 You robbed the bank! Your new balance is: " + remainder + " 💵");
+    //     continue;
+    //   } else {
+    //     alert("No money? No robbing? Too scared? 😏");
+    //     break;
+    //   }
+    // }
+
+    withdraw = parseInt(withdraw);
+
+    if (isNaN(withdraw) || withdraw <= 0) {
+      alert("Invalid amount. Please enter a positive number.");
+      continue;
+    }
+
+    if (withdraw > remainder) {
+      alert("Insufficient funds. Your current balance is: " + remainder);
+      continue;
+    }
+
+    remainder -= withdraw;
+    alert("Transaction successful! Remaining balance: " + remainder);
+  }
+
+
+
+</script>
+</body>
+</html>

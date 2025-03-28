@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+</head>
+<body>
+<button onclick="startGame()">Play</button>
+
+<script>
+  function startGame() {
+    let min = parseInt(prompt("Enter the minimum value:"));
+    let max = parseInt(prompt("Enter the maximum value:"));
+
+    if (isNaN(min) || isNaN(max) || min >= max) {
+      alert("Invalid range! Please try again.");
+      return;
+    }
+
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    let attempts = 3;
+
+    while (attempts > 0) {
+      let guess = parseInt(prompt(`Guess the number (${min} - ${max}). Attempts left: ${attempts}`));
+
+      if (isNaN(guess)) {
+        alert("Invalid input! Please enter a number.");
+        continue;
+      }
+
+      if (guess === randomNumber) {
+        alert("Congratulations! You guessed it right.");
+        return;
+      } else if (guess > randomNumber) {
+        alert("Too high! Try again.");
+      } else {
+        alert("Too low! Try again.");
+      }
+
+      attempts--;
+    }
+
+    alert(`Game over! The correct number was ${randomNumber}.`);
+  }
+</script>
+</body>
+</html>
